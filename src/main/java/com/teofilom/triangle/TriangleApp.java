@@ -7,15 +7,22 @@ import java.util.Scanner;
 
 public class TriangleApp {
     public static void main(String[] args) {
+        Double sideA, sideB, sideC;
 
-        Scanner scan = new Scanner(System.in);
+        if (args.length > 0 && args.length < 4) {
+            sideA = Double.valueOf(args[0]);
+            sideB = Double.valueOf(args[1]);
+            sideC = Double.valueOf(args[2]);
+        } else {
+            Scanner scan = new Scanner(System.in);
 
-        System.out.println("Enter the side A: ");
-        Double sideA = scan.nextDouble();
-        System.out.println("Enter the side B: ");
-        Double sideB = scan.nextDouble();
-        System.out.println("Enter the side C: ");
-        Double sideC = scan.nextDouble();
+            System.out.println("Enter the side A: ");
+            sideA = scan.nextDouble();
+            System.out.println("Enter the side B: ");
+            sideB = scan.nextDouble();
+            System.out.println("Enter the side C: ");
+            sideC = scan.nextDouble();
+        }
 
         Triangle triangle = new TriangleBuilder()
             .withSideA(sideA)
