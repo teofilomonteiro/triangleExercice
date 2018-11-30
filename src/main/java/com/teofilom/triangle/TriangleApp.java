@@ -1,20 +1,26 @@
 package com.teofilom.triangle;
 
-    import com.teofilom.triangle.models.Triangle;
-    import com.teofilom.triangle.models.TriangleBuilder;
+import com.teofilom.triangle.models.Triangle;
+import com.teofilom.triangle.models.TriangleBuilder;
+
+import java.util.Scanner;
 
 public class TriangleApp {
     public static void main(String[] args) {
 
-        double side1, side2, side3;
-        side1 = 10.3;
-        side2 = 10.4;
-        side3 = 10.5;
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Enter the side A: ");
+        Double sideA = scan.nextDouble();
+        System.out.println("Enter the side B: ");
+        Double sideB = scan.nextDouble();
+        System.out.println("Enter the side C: ");
+        Double sideC = scan.nextDouble();
 
         Triangle triangle = new TriangleBuilder()
-            .withSideA(side1)
-            .withSideB(side2)
-            .withSideC(side3)
+            .withSideA(sideA)
+            .withSideB(sideB)
+            .withSideC(sideC)
             .build();
 
         System.out.println(triangle.type());
